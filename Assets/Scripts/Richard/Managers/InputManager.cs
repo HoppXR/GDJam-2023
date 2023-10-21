@@ -12,14 +12,21 @@ public class InputManager
     {
         _Controls = new Control();
         
-        _Controls.Game.Movement.performed += hi =>
+        _Controls.Game.PMovement.performed += hi =>
         {
             myplayer.SetMovementDirection(hi.ReadValue<Vector2>());
         };
-        
+    }
+    public static void Init2(Monster mymonster)
+    {
+        _Controls.Game.MMovement.performed += hi =>
+        {
+            mymonster.SetMovementDirection(hi.ReadValue<Vector2>());
+        };
+
         _Controls.Permanent.Enable();
     }
-
+    
     public static void SetGameControls()
     {
         _Controls.Game.Enable();

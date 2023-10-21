@@ -6,9 +6,18 @@
             "id": "038c6960-cb5e-4846-a8b8-49b3f0220e39",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "PMovement",
                     "type": "PassThrough",
                     "id": "cd79ba99-f7ef-4eb4-aabe-5e1bc57bf659",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MMovement",
+                    "type": "PassThrough",
+                    "id": "009db429-c99a-4231-9c4a-b1dbe78522c9",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -23,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "PMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -34,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "PMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -45,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "PMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -56,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "PMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -67,7 +76,62 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "PMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Arrow Keys",
+                    "id": "7b6c151e-c636-465c-a5c2-e901068f33ef",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MMovement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "21980895-2317-4d88-bce0-5cacd5472961",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "4699125e-332c-427e-883a-094a239460fc",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "31befdd8-d2c2-4f27-9cd9-86778895cc42",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "057c4097-4956-4b91-891a-14cfb46b7fd3",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
