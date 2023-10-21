@@ -72,7 +72,7 @@ public class FieldOfView : MonoBehaviour
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
 
-    public void SetOrigin(Vector3 origin)
+    public void setOrigin(Vector3 origin)
     {
         this.origin = origin;
     }
