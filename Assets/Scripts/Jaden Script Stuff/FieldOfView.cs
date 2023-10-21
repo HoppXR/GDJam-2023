@@ -7,7 +7,6 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     private Mesh mesh;
     private Vector3 origin;
-    private float fov;
     private float viewDistance;
 
     private void Start()
@@ -18,8 +17,8 @@ public class FieldOfView : MonoBehaviour
 
     private void LateUpdate()
     {
-        fov = 360f;
-        viewDistance = 60f;
+        float fov = 360f;
+        viewDistance = 75f;
 
         int rayCount = 200;
         float angle = 0f;
@@ -76,16 +75,6 @@ public class FieldOfView : MonoBehaviour
     public void SetOrigin(Vector3 origin)
     {
         this.origin = origin;
-    }
-
-    public void SetFoV(float fov)
-    {
-        this.fov = fov;
-    }
-
-    public void SetViewDistance(float viewDistance)
-    {
-        this.viewDistance = viewDistance;
     }
 }
 
