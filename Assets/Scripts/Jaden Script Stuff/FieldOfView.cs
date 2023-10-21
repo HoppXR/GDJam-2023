@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
+    private Mesh mesh;
+    private Vector3 origin;
+    private float fov;
+    private float viewDistance;
+
     private void Start()
     {
-        Mesh mesh = new Mesh();
+        mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+    }
 
-        float fov = 360f;
-        Vector3 origin = Vector3.zero;
-        int rayCount = 100;
+    private void LateUpdate()
+    {
+        fov = 360f;
+        viewDistance = 60f;
+
+        int rayCount = 200;
         float angle = 0f;
         float angleIncrease = fov / rayCount;
-        float viewDistance = 50f;
 
         Vector3[] vertices = new Vector3[rayCount + 1 + 1];
         Vector2[] uv = new Vector2[vertices.Length];
@@ -27,7 +36,7 @@ public class FieldOfView : MonoBehaviour
         for (int i = 0; i <= rayCount; i++)
         {
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layerMask);
 
             if(raycastHit2D.collider == null)
             {
@@ -64,16 +73,20 @@ public class FieldOfView : MonoBehaviour
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
 
-    /*
-    public static float GetAngleFromVectorFloat(Vector3 dir)
+    public void SetOrigin(Vector3 origin)
     {
-        dir = dir.normalized;
-        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        if (n < 0) n += 360;
-
-        return n;
+        this.origin = origin;
     }
-    */
+
+    public void SetFoV(float fov)
+    {
+        this.fov = fov;
+    }
+
+    public void SetViewDistance(float viewDistance)
+    {
+        this.viewDistance = viewDistance;
+    }
 }
 
 /*      IMPLEMENT INTO CHARACTER CLASS
@@ -82,6 +95,5 @@ public class FieldOfView : MonoBehaviour
  *      
  *      IMPLEMENT INTO UPDATER
  *      
- *      fieldOfView.SetAimDirection(aimDir);
  *      fieldOfView.setOrigin(transform.position);
  */
