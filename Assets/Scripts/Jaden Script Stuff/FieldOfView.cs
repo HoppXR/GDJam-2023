@@ -20,7 +20,7 @@ public class FieldOfView : MonoBehaviour
         float fov = 360f;
         viewDistance = 75f;
 
-        int rayCount = 200;
+        int rayCount = 360;
         float angle = 0f;
         float angleIncrease = fov / rayCount;
 
@@ -77,12 +77,3 @@ public class FieldOfView : MonoBehaviour
         this.origin = origin;
     }
 }
-
-/*      IMPLEMENT INTO CHARACTER CLASS
- *      
- *      [SerializeField] private FieldOfView fieldOfView;
- *      
- *      IMPLEMENT INTO UPDATER
- *      
- *      fieldOfView.setOrigin(transform.position);
- */
