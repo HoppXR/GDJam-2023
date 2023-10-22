@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    private Health health;
+    float spikeDamageAmount = 4f;
+
     public GameObject SpikeyBallPrefab;
     [SerializeField] public float destroyDelay = 0.1f;
-    [SerializeField] public float cooldownTime = 2.0f;
+    [SerializeField] public float cooldownTime = 0.75f;
     private float _lastShootTime;
     [SerializeField] private float projectileForce = 10.0f;
     private Vector3 lastMovementDirection = Vector3.right; // Default direction when not moving
 
+    private void Start()
+    {
+        health = GetComponent<Health>();
+    }
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -62,5 +69,10 @@ public class Shoot : MonoBehaviour
             // Use the Destroy method with the specified delay
             Destroy(newProjectile, 5);
         }
+    }
+
+    public float GetSpikeDamageAmount()
+    {
+        return spikeDamageAmount;
     }
 }

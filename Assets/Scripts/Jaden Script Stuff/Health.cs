@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        Debug.Log("Bro got swiped");
+        Debug.Log("Took damage");
 
         if (currentHealth <= 0) 
         {

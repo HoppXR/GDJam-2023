@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterDamage : MonoBehaviour
 {
-    public float damageAmount = 25f;
+    public float damageAmount = 15f;
     private AdjustHealth playerHealth;
     
     // Start is called before the first frame update
