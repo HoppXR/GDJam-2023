@@ -5,9 +5,9 @@ public class SceneChanger : MonoBehaviour
 {
     public string EndCutscene;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.gameObject.CompareTag("Hole"))
+        if (col.gameObject.CompareTag("Hole"))
         {
             Debug.Log("Collision detected with Hole");
             LoadScene();
