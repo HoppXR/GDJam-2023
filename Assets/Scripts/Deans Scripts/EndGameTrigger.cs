@@ -1,27 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
-public class TriggerObject : MonoBehaviour
+public class CutsceneTrigger : MonoBehaviour
 {
-    private bool cutscenePlayed = false;
+    public PlayableDirector cutsceneDirector;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !cutscenePlayed)
+        if (other.CompareTag("Player")) // Make sure the object touching is the player
         {
-            // Player touched the object, trigger the cutscene.
-            cutscenePlayed = true;
-            // Add code to play the cutscene here.
+            // Play the cutscene
+            cutsceneDirector.Play();
 
-            // Subscribe to an event or timer that signals when the cutscene is finished.
-            // Example: cutscene.OnCutsceneFinished += EndGame;
+            EndGame();
         }
     }
 
-    // This method is called when the cutscene is finished.
     private void EndGame()
     {
-        // You can put game-ending logic here, such as transitioning to a game-over screen or quitting the application.
-        // Example: SceneManager.LoadScene("GameOverScene");
+       Application.Quit();
     }
 }
