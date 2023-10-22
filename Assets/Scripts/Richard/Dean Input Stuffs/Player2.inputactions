@@ -1,114 +1,106 @@
 {
-    "name": "Control",
+    "name": "Player2",
     "maps": [
         {
-            "name": "Game",
-            "id": "038c6960-cb5e-4846-a8b8-49b3f0220e39",
+            "name": "Player",
+            "id": "832b4087-263f-4c2e-8baf-ea9cbc2f19b3",
             "actions": [
                 {
-                    "name": "MMovement",
+                    "name": "Move",
                     "type": "PassThrough",
-                    "id": "cd79ba99-f7ef-4eb4-aabe-5e1bc57bf659",
+                    "id": "969d8c96-756d-4514-a8ce-05ebec332ddd",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "144c3ea2-dac0-4762-8aa6-454cba353e3c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "2944468d-e8ec-4931-85e4-fa74ea0cdc17",
+                    "name": "^v<>",
+                    "id": "5e078679-c589-4c31-9ae2-5b4b48925ee5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "c2673a41-e9a8-441b-9d4c-5c9f31c4316d",
-                    "path": "<Keyboard>/i",
+                    "id": "61212ce4-358b-427e-a402-9584c343114e",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "a6071a66-bc36-4d03-83a4-9f96ab97fc97",
-                    "path": "<Keyboard>/k",
+                    "id": "17329cfa-e62d-47ce-aaf1-135d61ae21bd",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "aef3ebfc-9406-4dab-a78e-39a256b63941",
-                    "path": "<Keyboard>/j",
+                    "id": "bdb86d63-bb33-4f49-924e-b70f7330bd20",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "ebe76612-aad5-4156-bfbd-c4e21c48860f",
-                    "path": "<Keyboard>/l",
+                    "id": "cf5fafc4-87b3-4bd1-9f41-c8a1ea05a4d3",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "8a6ce95b-46e3-4944-b348-4127f1c62c0f",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "1513ab7e-8fc8-45c5-b14c-5edcc68276ab",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "6dcc6ba2-0bae-42a1-bcfd-c96e99753211",
-                    "path": "",
+                    "id": "279a7aa8-f75d-4098-ac45-7bb7afb56e9b",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Permanent",
-            "id": "6479ef5f-f21d-468b-a3a2-0e11fcfd8bc6",
+            "name": "UI",
+            "id": "781c0c24-8b42-45e5-8ebf-2e90cda25b95",
             "actions": [
                 {
                     "name": "New action",
                     "type": "Button",
-                    "id": "b3991442-2a75-468a-a9c7-0703f86c0f15",
+                    "id": "cae4c57d-cec8-40f5-82d2-99f036e8318d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -118,7 +110,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f642f171-897d-4490-89cd-c6ba50837411",
+                    "id": "e5d16dc6-6423-464f-accf-0d91ff358e32",
                     "path": "",
                     "interactions": "",
                     "processors": "",

@@ -10,7 +10,7 @@ public class KnockBack : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform));
+            StartCoroutine(TDMovement.instance.Knockback(knockbackDuration, knockbackPower, this.transform));
         }
     }
 }

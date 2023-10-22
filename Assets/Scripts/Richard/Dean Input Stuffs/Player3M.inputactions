@@ -1,114 +1,126 @@
 {
-    "name": "Control",
+    "name": "Player3M",
     "maps": [
         {
-            "name": "Game",
-            "id": "038c6960-cb5e-4846-a8b8-49b3f0220e39",
+            "name": "Player",
+            "id": "44cf6dd3-9ecc-4a06-ba49-cdae36c451a8",
             "actions": [
                 {
-                    "name": "MMovement",
+                    "name": "Move",
                     "type": "PassThrough",
-                    "id": "cd79ba99-f7ef-4eb4-aabe-5e1bc57bf659",
+                    "id": "343f7fa6-12c7-429a-8893-fb031d505dcf",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "1c944900-849a-4944-86c2-f1816cf8fec6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "2bd1ff7b-d53e-40ee-8762-011fb411660a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "2944468d-e8ec-4931-85e4-fa74ea0cdc17",
+                    "name": "IJKL",
+                    "id": "8b99b282-a6ba-42a7-a5ad-9de870cc40f5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "c2673a41-e9a8-441b-9d4c-5c9f31c4316d",
+                    "id": "1cdea15c-f080-4fb0-bc0e-1591c765359a",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "a6071a66-bc36-4d03-83a4-9f96ab97fc97",
+                    "id": "557dbc84-59b0-4ec9-8f8d-9d695dbfd519",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "aef3ebfc-9406-4dab-a78e-39a256b63941",
+                    "id": "2228231b-d4ca-4151-8544-842aca0f4151",
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "ebe76612-aad5-4156-bfbd-c4e21c48860f",
+                    "id": "bf198646-462c-46f1-ad0b-98e18e7bac46",
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "8a6ce95b-46e3-4944-b348-4127f1c62c0f",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "1513ab7e-8fc8-45c5-b14c-5edcc68276ab",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "6dcc6ba2-0bae-42a1-bcfd-c96e99753211",
-                    "path": "",
+                    "id": "6806fc92-e53f-42bd-9dfc-008710b6d0a0",
+                    "path": "<Keyboard>/u",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "335de571-97a0-4855-81c3-358d7b7f6010",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Permanent",
-            "id": "6479ef5f-f21d-468b-a3a2-0e11fcfd8bc6",
+            "name": "UI",
+            "id": "a6d7b823-6c6a-42f3-b3d8-343f4931e232",
             "actions": [
                 {
                     "name": "New action",
                     "type": "Button",
-                    "id": "b3991442-2a75-468a-a9c7-0703f86c0f15",
+                    "id": "acb56b3a-b961-4a31-8d9b-ff72d90aebaa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -118,7 +130,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f642f171-897d-4490-89cd-c6ba50837411",
+                    "id": "c289297e-5b6e-44ad-89ef-26cb62520e2f",
                     "path": "",
                     "interactions": "",
                     "processors": "",

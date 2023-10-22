@@ -13,7 +13,7 @@ public class InputManager
     {
         _Controls = new Control();
         
-        _Controls.Game.PMovement.performed += hi =>
+        _Controls.Game.MMovement.performed += hi =>
         {
             myplayer.SetMovementDirection(hi.ReadValue<Vector2>());
         };

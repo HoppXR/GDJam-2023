@@ -1,114 +1,106 @@
 {
-    "name": "Control",
+    "name": "Player",
     "maps": [
         {
-            "name": "Game",
-            "id": "038c6960-cb5e-4846-a8b8-49b3f0220e39",
+            "name": "Player",
+            "id": "152a515d-6a6f-4cf6-ac64-a23698d6488c",
             "actions": [
                 {
-                    "name": "MMovement",
+                    "name": "Move",
                     "type": "PassThrough",
-                    "id": "cd79ba99-f7ef-4eb4-aabe-5e1bc57bf659",
+                    "id": "85a1a92f-60b6-414a-b6cb-b4a6678e59c8",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "d4d53c11-9a3b-40ed-9e5a-c7c86865087a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "WASD",
-                    "id": "2944468d-e8ec-4931-85e4-fa74ea0cdc17",
+                    "id": "3cabd21b-7980-4363-b898-cf78240750e6",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "c2673a41-e9a8-441b-9d4c-5c9f31c4316d",
+                    "id": "00631af8-7344-4bdc-95bd-dc27b0724032",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "a6071a66-bc36-4d03-83a4-9f96ab97fc97",
+                    "id": "16768ad1-ab2b-4cda-9ce7-97231bb64399",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "aef3ebfc-9406-4dab-a78e-39a256b63941",
+                    "id": "2e382b4f-d52d-4cbf-ae9f-5bdc27c54e66",
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "ebe76612-aad5-4156-bfbd-c4e21c48860f",
+                    "id": "ee91cd37-7236-48b6-9df1-0695a14f7da8",
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MMovement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "8a6ce95b-46e3-4944-b348-4127f1c62c0f",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "1513ab7e-8fc8-45c5-b14c-5edcc68276ab",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "6dcc6ba2-0bae-42a1-bcfd-c96e99753211",
-                    "path": "",
+                    "id": "687c87c9-c084-4e92-b9ad-abcbf01cf3f9",
+                    "path": "<Keyboard>/u",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Permanent",
-            "id": "6479ef5f-f21d-468b-a3a2-0e11fcfd8bc6",
+            "name": "UI",
+            "id": "17dd3d2e-7ca3-4dba-ad10-27d753ce88cf",
             "actions": [
                 {
                     "name": "New action",
                     "type": "Button",
-                    "id": "b3991442-2a75-468a-a9c7-0703f86c0f15",
+                    "id": "de2b59db-192d-4e8d-a9a2-b1230b6dbfb7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -118,7 +110,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f642f171-897d-4490-89cd-c6ba50837411",
+                    "id": "9a76ffaf-3a8c-4f90-8213-9800c5685bb0",
                     "path": "",
                     "interactions": "",
                     "processors": "",
