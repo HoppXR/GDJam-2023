@@ -67,4 +67,17 @@ public class Attacking : MonoBehaviour
             Destroy(newSwing, destroyDelay);
         }
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var healthComponent = collision.gameObject.GetComponent<Health>();
+            if (healthComponent != null)
+            {
+                healthComponent.TakeDamage(50);
+                Debug.Log("Attack hit player!");
+            }
+        }
+    }
 }

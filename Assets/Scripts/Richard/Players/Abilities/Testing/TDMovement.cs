@@ -3,49 +3,50 @@ using System.Collections.Generic;
 using UnityEditor.Searcher;
 using UnityEngine;
 
-public class TDMovement : MonoBehaviour
-{
-    public static TDMovement instance;
-    [SerializeField] private FieldOfView fieldOfView;
-    private float moveSpeed = 5;
-    private float KnockbackPower = 6;
-    public Rigidbody2D rb;
-
-    private Vector2 moveInput;
-
-    private void Awake()
+    public class TDMovement : MonoBehaviour
     {
-        instance = this;
-    }
+        private float moveSpeed;
+        public Rigidbody2D rb;
+        private Vector2 moveInput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        // Define custom input keys for movement
+        public KeyCode moveUpKey = KeyCode.W;
+        public KeyCode moveLeftKey = KeyCode.A;
+        public KeyCode moveDownKey = KeyCode.S;
+        public KeyCode moveRightKey = KeyCode.D;
 
-    // Update is called once per frame
-    void Update()
-    {
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-
-        moveInput.Normalize();
-
-        rb.velocity = moveInput * moveSpeed;
-    }
-
-    public IEnumerator Knockback(float duration, float power, Transform obj)
-    {
-        float timer = 0;
-
-        while (timer < duration)
+        void Start()
         {
-            timer += Time.deltaTime;
-            Vector2 direction = ((Vector2)obj.transform.position - (Vector2)this.transform.position).normalized;
-            rb.AddForce(-direction * KnockbackPower);
-            yield return null;
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        void Update()
+        {
+            // Check for WASD key presses
+            moveInput = Vector2.zero;
+        
+            if (Input.GetKey(moveUpKey))
+            {
+                moveInput.y = 1;
+            }
+            else if (Input.GetKey(moveDownKey))
+            {
+                moveInput.y = -1;
+            }
+        
+            if (Input.GetKey(moveLeftKey))
+            {
+                moveInput.x = -1;
+            }
+            else if (Input.GetKey(moveRightKey))
+            {
+                moveInput.x = 1;
+            }
+        
+            moveInput.Normalize();
+
+            rb.velocity = moveInput * moveSpeed;
         }
     }
-}
+
 

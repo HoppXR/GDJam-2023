@@ -8,14 +8,15 @@ public class Health : MonoBehaviour
     public float maxHealth;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
     }
 
-    void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        Debug.Log("Bro got swiped");
 
         if (currentHealth <= 0) 
         {
@@ -23,7 +24,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Heal(float amount)
+    public void Heal(float amount)
     {
         currentHealth += amount;
 

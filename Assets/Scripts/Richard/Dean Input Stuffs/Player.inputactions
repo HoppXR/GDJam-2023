@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Player",
-            "id": "152a515d-6a6f-4cf6-ac64-a23698d6488c",
+            "id": "44cf6dd3-9ecc-4a06-ba49-cdae36c451a8",
             "actions": [
                 {
                     "name": "Move",
                     "type": "PassThrough",
-                    "id": "85a1a92f-60b6-414a-b6cb-b4a6678e59c8",
+                    "id": "343f7fa6-12c7-429a-8893-fb031d505dcf",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,7 @@
                 {
                     "name": "Dash",
                     "type": "Button",
-                    "id": "d4d53c11-9a3b-40ed-9e5a-c7c86865087a",
+                    "id": "0beee451-0825-4d48-9f7b-5884879f4319",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -26,8 +26,8 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "3cabd21b-7980-4363-b898-cf78240750e6",
+                    "name": "IJKL",
+                    "id": "8b99b282-a6ba-42a7-a5ad-9de870cc40f5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "00631af8-7344-4bdc-95bd-dc27b0724032",
+                    "id": "1cdea15c-f080-4fb0-bc0e-1591c765359a",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
@@ -49,7 +49,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "16768ad1-ab2b-4cda-9ce7-97231bb64399",
+                    "id": "557dbc84-59b0-4ec9-8f8d-9d695dbfd519",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
@@ -60,7 +60,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "2e382b4f-d52d-4cbf-ae9f-5bdc27c54e66",
+                    "id": "2228231b-d4ca-4151-8544-842aca0f4151",
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
@@ -71,7 +71,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "ee91cd37-7236-48b6-9df1-0695a14f7da8",
+                    "id": "bf198646-462c-46f1-ad0b-98e18e7bac46",
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
@@ -82,7 +82,7 @@
                 },
                 {
                     "name": "",
-                    "id": "687c87c9-c084-4e92-b9ad-abcbf01cf3f9",
+                    "id": "a1fbc426-bde1-4db3-b749-60c25a70ca2c",
                     "path": "<Keyboard>/u",
                     "interactions": "",
                     "processors": "",
@@ -95,12 +95,12 @@
         },
         {
             "name": "UI",
-            "id": "17dd3d2e-7ca3-4dba-ad10-27d753ce88cf",
+            "id": "a6d7b823-6c6a-42f3-b3d8-343f4931e232",
             "actions": [
                 {
                     "name": "New action",
                     "type": "Button",
-                    "id": "de2b59db-192d-4e8d-a9a2-b1230b6dbfb7",
+                    "id": "acb56b3a-b961-4a31-8d9b-ff72d90aebaa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -110,7 +110,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9a76ffaf-3a8c-4f90-8213-9800c5685bb0",
+                    "id": "c289297e-5b6e-44ad-89ef-26cb62520e2f",
                     "path": "",
                     "interactions": "",
                     "processors": "",
