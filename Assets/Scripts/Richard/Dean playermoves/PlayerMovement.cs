@@ -54,15 +54,6 @@ public class PlayerController : MonoBehaviour
         if (Time.time >= nextDashTime)
         {
             float dashCooldownFromAbilities = abilitiesScriptReference.GetDashCooldown();
-
-            if (moveInput != Vector2.zero && playerInput.actions["Dash"].triggered)
-            {
-                // Initiate a dash in the direction of movement
-                Dash(moveInput.normalized);
-                nextDashTime = Time.time + dashCooldown;
-
-                health.dashDamage(dashDamageAmount);
-            }
         }
     }
 
