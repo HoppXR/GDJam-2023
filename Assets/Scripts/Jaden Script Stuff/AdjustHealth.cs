@@ -30,4 +30,9 @@ public class AdjustHealth : MonoBehaviour
         float fillValue = health.currentHealth / health.maxHealth;
         slider.value = fillValue;
     }
+
+    public void ApplyDamage(float damageAmount)
+    {
+        health.TakeDamage(damageAmount);
+    }
 }

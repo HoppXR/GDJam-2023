@@ -4,12 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Abilities abilitiesScriptReference;
+    private Health health;
 
     [SerializeField] private FieldOfView fieldOfView;
     public float moveSpeed = 5f;
     public float dashSpeed = 15f;
     public float dashDuration = 0.3f;
     float dashCooldown;
+    float dashDamageAmount = 10f;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         abilitiesScriptReference = GetComponent<Abilities>();
+        health = GetComponent<Health>();
 
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
                 // Initiate a dash in the direction of movement
                 Dash(moveInput.normalized);
                 nextDashTime = Time.time + dashCooldown;
+
+                health.dashDamage(dashDamageAmount);
             }
         }
     }
@@ -80,7 +85,13 @@ public class PlayerController : MonoBehaviour
         {
             Dash(moveInput.normalized);
             nextDashTime += Time.time + dashCooldown;
+            health.dashDamage(dashDamageAmount);
         }
     }
 
+    // Jaden added this
+    public bool IsDashing()
+    {
+        return isDashing;
+    }
 }

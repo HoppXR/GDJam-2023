@@ -1189,9 +1189,10 @@ GameObject:
   - component: {fileID: 649598357}
   - component: {fileID: 649598356}
   - component: {fileID: 649598358}
+  - component: {fileID: 649598359}
   m_Layer: 9
   m_Name: EnemyTest
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,6 +1299,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &649598359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649598355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ad1d2afba9bea4b96db421950ac7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &749834008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,30 +1789,15 @@ GameObject:
   - component: {fileID: 1896409071}
   - component: {fileID: 1896409070}
   - component: {fileID: 1896409069}
-  - component: {fileID: 1896409068}
   - component: {fileID: 1896409075}
   - component: {fileID: 1896409076}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1896409068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896409067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4445dab553a25148b4732b7d662efe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackPower: 150
-  knockbackDuration: 0.1
 --- !u!61 &1896409069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2069,8 +2068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478c1ac45e42d04ba3dfcaafe745662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
-  maxHealth: 10
+  currentHealth: 100
+  maxHealth: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

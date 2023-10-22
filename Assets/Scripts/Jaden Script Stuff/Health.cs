@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0) 
         {
-            // player dies
+            Die();
         }
     }
 
@@ -31,6 +31,19 @@ public class Health : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public void dashDamage(float amount)
+    {
+        if (GetComponent<PlayerController>() != null && GetComponent<PlayerController>().IsDashing())
+        {
+            TakeDamage(amount);
         }
     }
 }
