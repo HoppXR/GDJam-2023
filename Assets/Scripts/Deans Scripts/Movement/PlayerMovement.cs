@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FieldOfView fieldOfView;
     public float moveSpeed = 5f;
 
+    public AudioSource audioPlayer;
+
     private Vector2 moveInput;
     private Rigidbody2D rb;
 
@@ -24,4 +26,13 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();   
     }
+
+    public void OnCollisionEnter2D(Collision2D collision) 
+    {
+        if (collision.gameObject.tag == "CollisionTag") 
+        {
+            audioPlayer.Play();
+        }    
+    }
+
 }
