@@ -41,7 +41,18 @@ public class AbilityDash : MonoBehaviour
             rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
         }  
     }
- 
+
+    // Jaden added this
+    public void StartDash()
+    {
+        if (canDash)
+        {
+            StartCoroutine(Dash(movement.normalized));
+            _nextDashTime = Time.time + cooldownTime;
+            Debug.Log("Dash Initiated!");
+        }
+    }
+
     IEnumerator Dash(Vector2 direction)
     {
         canDash = false;

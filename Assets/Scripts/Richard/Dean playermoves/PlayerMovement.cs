@@ -3,11 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private Abilities abilitiesScriptReference;
+
     [SerializeField] private FieldOfView fieldOfView;
     public float moveSpeed = 5f;
     public float dashSpeed = 15f;
     public float dashDuration = 0.3f;
-    public float dashCooldown = 1f;
+    float dashCooldown;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        abilitiesScriptReference = GetComponent<Abilities>();
+
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
     }
@@ -46,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
         if (Time.time >= nextDashTime)
         {
+            float dashCooldownFromAbilities = abilitiesScriptReference.GetDashCooldown();
+
             if (moveInput != Vector2.zero && playerInput.actions["Dash"].triggered)
             {
                 // Initiate a dash in the direction of movement
@@ -66,4 +72,15 @@ public class PlayerController : MonoBehaviour
         dashStartTime = Time.time;
         rb.velocity = direction * dashSpeed;
     }
+
+    // Jaden added this
+    public void TriggerDash()
+    {
+        if (!isDashing && moveInput != Vector2.zero)
+        {
+            Dash(moveInput.normalized);
+            nextDashTime += Time.time + dashCooldown;
+        }
+    }
+
 }

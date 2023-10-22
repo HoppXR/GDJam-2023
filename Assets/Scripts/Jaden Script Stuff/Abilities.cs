@@ -5,19 +5,33 @@ using UnityEngine.UI;
 
 public class Abilities : MonoBehaviour
 {
+    private PlayerController playerController;
+
     [Header("Dash Ability")]
     public Image dashImage;
     public Text dashText;
     public KeyCode dashKey;
     public float dashCooldown = 5;
-    
+
     bool isDashCooldown = false;
 
     private float currentDashCooldown;
 
-    // Start is called before the first frame update
+    public float GetDashCooldown()
+    {
+        return dashCooldown;
+    }
+    
     void Start()
     {
+        StartCoroutine(WaitForPlayerController());
+    }
+
+    IEnumerator WaitForPlayerController()
+    {
+        yield return null;
+        playerController = GetComponent<PlayerController>();
+
         dashImage.fillAmount = 0;
         dashText.text = "";
     }
@@ -36,6 +50,11 @@ public class Abilities : MonoBehaviour
         {
             isDashCooldown = true;
             currentDashCooldown = dashCooldown;
+
+            if (playerController != null)
+            {
+                playerController.TriggerDash();
+            }
         }
     }
 
