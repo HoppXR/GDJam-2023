@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class Monster : MonoBehaviour
 {
     [SerializeField] private float speed = 4;
@@ -27,3 +27,4 @@ public class Monster : MonoBehaviour
         _moveDirection2 = currentDirection;
     }
 }
+*/

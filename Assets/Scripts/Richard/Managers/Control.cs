@@ -35,15 +35,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MMovement"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""009db429-c99a-4231-9c4a-b1dbe78522c9"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -99,61 +90,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Arrow Keys"",
-                    ""id"": ""7b6c151e-c636-465c-a5c2-e901068f33ef"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""21980895-2317-4d88-bce0-5cacd5472961"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""4699125e-332c-427e-883a-094a239460fc"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""31befdd8-d2c2-4f27-9cd9-86778895cc42"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""057c4097-4956-4b91-891a-14cfb46b7fd3"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -221,7 +157,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
         // Game
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_PMovement = m_Game.FindAction("PMovement", throwIfNotFound: true);
-        m_Game_MMovement = m_Game.FindAction("MMovement", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -290,13 +225,11 @@ public partial class @Control: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Game;
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_PMovement;
-    private readonly InputAction m_Game_MMovement;
     public struct GameActions
     {
         private @Control m_Wrapper;
         public GameActions(@Control wrapper) { m_Wrapper = wrapper; }
         public InputAction @PMovement => m_Wrapper.m_Game_PMovement;
-        public InputAction @MMovement => m_Wrapper.m_Game_MMovement;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -309,9 +242,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @PMovement.started += instance.OnPMovement;
             @PMovement.performed += instance.OnPMovement;
             @PMovement.canceled += instance.OnPMovement;
-            @MMovement.started += instance.OnMMovement;
-            @MMovement.performed += instance.OnMMovement;
-            @MMovement.canceled += instance.OnMMovement;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -319,9 +249,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @PMovement.started -= instance.OnPMovement;
             @PMovement.performed -= instance.OnPMovement;
             @PMovement.canceled -= instance.OnPMovement;
-            @MMovement.started -= instance.OnMMovement;
-            @MMovement.performed -= instance.OnMMovement;
-            @MMovement.canceled -= instance.OnMMovement;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -434,7 +361,6 @@ public partial class @Control: IInputActionCollection2, IDisposable
     public interface IGameActions
     {
         void OnPMovement(InputAction.CallbackContext context);
-        void OnMMovement(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

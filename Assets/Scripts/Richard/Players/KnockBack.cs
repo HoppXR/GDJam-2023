@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swing : MonoBehaviour
+public class KnockBack : MonoBehaviour
 {
-    [SerializeField]public float knockbackPower;
-    [SerializeField]public float knockbackDuration;
-
+    [SerializeField] public float knockbackPower = 150;
+    [SerializeField] public float knockbackDuration;
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
