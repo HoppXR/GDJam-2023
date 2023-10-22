@@ -18,7 +18,7 @@ public class FieldOfView : MonoBehaviour
     private void Update()
     {
         float fov = 360f;
-        viewDistance = 75f;
+        viewDistance = 15f;
 
         int rayCount = 360;
         float angle = 0f;
@@ -64,6 +64,7 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.RecalculateBounds();
     }
 
     public static Vector3 GetVectorFromAngle(float angle)
