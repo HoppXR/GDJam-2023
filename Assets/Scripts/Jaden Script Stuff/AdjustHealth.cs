@@ -13,26 +13,36 @@ public class AdjustHealth : MonoBehaviour
     void Awake()
     {
         slider = GetComponent<Slider>();
+        if (slider == null)
+        {
+            Debug.LogError("Slider component not found on this GameObject.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (slider.value <= slider.minValue)
+        if (slider != null && health != null)
         {
-            fillImage.enabled = false;
-        }
-        if (slider.value > slider.minValue && !fillImage.enabled)
-        {
-            fillImage.enabled = true;
-        }
+            if (slider.value <= slider.minValue)
+            {
+                fillImage.enabled = false;
+            }
+            if (slider.value > slider.minValue && !fillImage.enabled)
+            {
+                fillImage.enabled = true;
+            }
 
-        float fillValue = health.currentHealth / health.maxHealth;
-        slider.value = fillValue;
+            float fillValue = health.currentHealth / health.maxHealth;
+            slider.value = fillValue;
+        }
     }
 
     public void ApplyDamage(float damageAmount)
     {
-        health.TakeDamage(damageAmount);
+        if (health != null)
+        {
+            health.TakeDamage(damageAmount);
+        }
     }
 }
