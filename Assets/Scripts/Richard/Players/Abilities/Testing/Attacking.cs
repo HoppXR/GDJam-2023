@@ -7,8 +7,6 @@ public class Attacking : MonoBehaviour
 {
     public GameObject SwingPrefab;
     [SerializeField] public float destroyDelay = 0.1f;
-    [SerializeField] public float knockbackPower;
-    [SerializeField] public float knockbackDuration;
     private Rigidbody2D rb;
     private Vector3 lastMovementDirection;
     public float spawnDistance = 6f;

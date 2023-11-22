@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject SpikeyBallPrefab;
-    [SerializeField] public float destroyDelay = 0.1f;
     [SerializeField] public float cooldownTime = 2.0f;
     private float _lastShootTime;
     [SerializeField] private float projectileForce = 10.0f;
